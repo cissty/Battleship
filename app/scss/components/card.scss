@@ -1,0 +1,79 @@
+@use '../util/' as *;
+body{
+    background-image: linear-gradient(rgba(4, 9, 30, 0.562), rgba(4, 9, 30, 0.418)), url(/images/1003800.jpg);
+    backdrop-filter: blur(5px);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-rows: rem(100) 1fr rem(50);
+    height: 100vh;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--Light-card);
+    font-size: rem(20);
+    & svg{
+        margin-left: rem(15);
+    }
+}
+h1{
+    text-align: center;
+    color:  var(--Light-card);
+    font-family: var(--font-head);
+    font-size: rem(60);
+}
+$card-width: rem(350);
+.card {
+    padding: rem(20);
+    color: white;
+    border-radius: rem(10);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: $card-width;
+    height: rem(500);
+    overflow: auto;
+    border-left: 5px solid var(--card-left);
+    
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: rem(10);
+      text-align: center;
+    }
+  
+    ol {
+      list-style-type: decimal;
+      margin-left: rem(20);
+      padding-left: rem(20);
+  
+      li {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: rem(10);
+  
+        h4 {
+          font-size: 1.1rem;
+          margin-top: rem(15);
+          margin-bottom: rem(5);
+        }
+  
+        ul {
+          margin-top: rem(5);
+          margin-bottom: rem(10);
+          padding-left: rem(20);
+          
+          li {
+            font-weight: normal; // Reset font weight for nested list items
+          }
+        }
+      }
+    }
+  }
+  .last.card{
+    grid-column: span 2;
+    height: rem(200);
+    width: max-content;
+    padding: rem(10);
+  }

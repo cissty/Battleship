@@ -1,0 +1,16 @@
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    margin-top: 0;
+  }
+
+  a, a:visited, a:active {
+    text-decoration: none;
+  }
+  
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }

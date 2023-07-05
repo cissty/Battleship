@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="title">BattleShip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./main.js" defer></script>
+    <script src="./validateUser.js" defer></script>
+    <script src="./translate.js" defer></script>
+</head>
+<body class="grid grid-rows-[130px,1fr,60px]">
+    <header>
+        <h1 id="title" data-translate="title">BattleShip</h1>
+
+        <div class="side">
+          <div class="music">
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.1">
+        <button id="toggleButton">
+          <?xml version="1.0" encoding="iso-8859-1"?>
+  <svg height="60px" width="60px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+     viewBox="0 0 496.158 496.158" xml:space="preserve">
+  <path style="fill:#337180;" d="M496.158,248.085c0-137.022-111.068-248.082-248.074-248.082C111.07,0.003,0,111.063,0,248.085
+    c0,137.001,111.07,248.07,248.084,248.07C385.09,496.155,496.158,385.086,496.158,248.085z"/>
+  <g>
+    <path style="fill:#DFF2F4;" d="M73.412,251.075c0,3.313-2.686,6-6,6H56.746c-3.314,0-6-2.687-6-6v-6.5c0-3.313,2.686-6,6-6h10.666
+      c3.314,0,6,2.687,6,6V251.075z"/>
+    <path style="fill:#DFF2F4;" d="M104.412,266.825c0,3.313-2.686,6-6,6H87.746c-3.314,0-6-2.687-6-6v-37.5c0-3.313,2.686-6,6-6
+      h10.666c3.314,0,6,2.687,6,6V266.825z"/>
+  </g>
+  <g>
+    <path style="fill:#B5E3EA;" d="M135.412,274.579c0,3.313-2.686,6-6,6h-10.666c-3.314,0-6-2.687-6-6v-53c0-3.313,2.686-6,6-6h10.666
+      c3.314,0,6,2.687,6,6V274.579z"/>
+    <path style="fill:#B5E3EA;" d="M166.412,290.079c0,3.313-2.686,6-6,6h-10.666c-3.314,0-6-2.687-6-6v-84c0-3.313,2.686-6,6-6h10.666
+      c3.314,0,6,2.687,6,6V290.079z"/>
+  </g>
+  <g>
+    <path style="fill:#A3D5E0;" d="M197.412,321.079c0,3.313-2.686,6-6,6h-10.666c-3.314,0-6-2.687-6-6v-146c0-3.313,2.686-6,6-6
+      h10.666c3.314,0,6,2.687,6,6V321.079z"/>
+    <path style="fill:#A3D5E0;" d="M228.412,336.579c0,3.313-2.686,6-6,6h-10.666c-3.314,0-6-2.687-6-6v-177c0-3.313,2.686-6,6-6
+      h10.666c3.314,0,6,2.687,6,6V336.579z"/>
+  </g>
+  <path style="fill:#8EC5CE;" d="M259.412,383.079c0,3.313-2.686,6-6,6h-10.666c-3.314,0-6-2.687-6-6v-270c0-3.313,2.686-6,6-6h10.666
+    c3.314,0,6,2.687,6,6V383.079z"/>
+  <g>
+    <path style="fill:#A3D5E0;" d="M290.412,321.079c0,3.313-2.686,6-6,6h-10.666c-3.314,0-6-2.687-6-6v-146c0-3.313,2.686-6,6-6
+      h10.666c3.314,0,6,2.687,6,6V321.079z"/>
+    <path style="fill:#A3D5E0;" d="M321.412,290.079c0,3.313-2.686,6-6,6h-10.666c-3.314,0-6-2.687-6-6v-84c0-3.313,2.686-6,6-6h10.666
+      c3.314,0,6,2.687,6,6V290.079z"/>
+  </g>
+  <g>
+    <path style="fill:#B5E3EA;" d="M352.412,305.579c0,3.313-2.686,6-6,6h-10.666c-3.314,0-6-2.687-6-6v-115c0-3.313,2.686-6,6-6
+      h10.666c3.314,0,6,2.687,6,6V305.579z"/>
+    <path style="fill:#B5E3EA;" d="M383.412,274.575c0,3.313-2.686,6-6,6h-10.666c-3.314,0-6-2.687-6-6v-53c0-3.313,2.686-6,6-6h10.666
+      c3.314,0,6,2.687,6,6V274.575z"/>
+  </g>
+  <g>
+    <path style="fill:#DFF2F4;" d="M445.412,251.261c0,3.314-2.686,6-6,6h-10.666c-3.314,0-6-2.686-6-6v-6.5c0-3.313,2.686-6,6-6
+      h10.666c3.314,0,6,2.687,6,6V251.261z"/>
+    <path style="fill:#DFF2F4;" d="M414.412,259.079c0,3.313-2.686,6-6,6h-10.666c-3.314,0-6-2.687-6-6v-22c0-3.313,2.686-6,6-6h10.666
+      c3.314,0,6,2.687,6,6V259.079z"/>
+  </g>
+  </svg>
+        </button>
+          </div>
+          <div class="languages">
+            <button id="turkishBtn" class="button tr"></button>
+            <button id="englishBtn" class="button en"></button>
+  
+          </div>
+        </div>
+        
+    </header>
+    <main>
+      <div class="info-container">
+        <div class="card">
+          <h3 data-translate="t-1">Game Objective</h3>
+          <ol>
+            <li data-translate="l-1">The object of Battleship is to try and sink all of the other player's before they sink all of your ships.</li>
+            <li data-translate="l-2">Other player's ships are somewhere on the board.</li>
+            <li data-translate="l-3">You try and hit them by calling out the coordinates of one of the squares on the board.</li>
+            <li data-translate="l-4">The other player also tries to hit your ships by calling out coordinates.</li>   
+            <li data-translate="l-5">Neither you nor the other player can see the other's board so you must try to guess where they are.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3 data-translate="t-2">Starting a New Game</h3>
+          <ol>
+            <li data-translate="l2-1">Each player places the 5 ships somewhere on their board.</li>
+            <li data-translate="l2-2">The ships can only be placed vertically or horizontally. Diagonal placement is not allowed.</li>
+            <li data-translate="l2-3">No ships may be placed on another ship.</li>
+            <li data-translate="l2-4"><h4>The 5 ships are:</h4></li>
+            <ul>
+              <li data-translate="l3-1">Carrier (occupies 5 spaces)</li>
+              <li data-translate="l3-2">Battleship (4)</li>
+              <li data-translate="l3-3">Cruiser (3)</li>
+              <li data-translate="l3-4">Submarine (3)</li>
+              <li data-translate="l3-5">Destroyer (2)</li>
+            </ul>
+          </ol>
+        </div>
+        <div class="last card">
+          <h3 data-translate="t-3">Playing the Game</h3>
+          <ol>
+            <li data-translate="l4-1">Player's take turns guessing by calling out the coordinates.</li>
+            <li data-translate="l4-2">The opponent responds with "hit" or "miss" as appropriate.</li>
+            <li data-translate="l4-3">When all of the squares that one your ships occupies have been hit, the ship will be sunk.</li>
+            <li data-translate="l4-4"><strong>As soon as all of one player's ships have been sunk, the game ends.</strong></li>
+          </ol>
+        </div>
+      </div>
+      <div class="user-interface">
+        <h2 data-translate="get-started">Let's Get Started</h2>
+        <div class="form-group">
+          <input type="text" id="name-input" placeholder="Enter your name">
+          <button data-translate="submit" id="submit-btn">Submit</button>
+        </div>
+        <p id="error-text" style="color: azure; margin-top: 4px;"></p>
+
+      </div>
+    </main>
+    <footer><p><strong>Copyright © 2023 Cissty</strong></p>
+        <a href="https://github.com/cissty" target="_blank">
+          <?xml version="1.0"?><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 50 50"
+            width="25px"
+            height="25px"
+            fill="white"
+          >
+            <path
+              d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"
+            />
+          </svg>
+        </a></footer>
+</body>
+</html>
