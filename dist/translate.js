@@ -9,13 +9,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./app/js sync recursive ^\\.\\/languages.*\\.json$":
-/*!**********************************************!*\
-  !*** ./app/js/ sync ^\.\/languages.*\.json$ ***!
-  \**********************************************/
-/***/ ((module) => {
+/***/ "./languages lazy recursive ^\\.\\/.*\\.json$":
+/*!*********************************************************!*\
+  !*** ./languages/ lazy ^\.\/.*\.json$ namespace object ***!
+  \*********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("function webpackEmptyContext(req) {\n\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\te.code = 'MODULE_NOT_FOUND';\n\tthrow e;\n}\nwebpackEmptyContext.keys = () => ([]);\nwebpackEmptyContext.resolve = webpackEmptyContext;\nwebpackEmptyContext.id = \"./app/js sync recursive ^\\\\.\\\\/languages.*\\\\.json$\";\nmodule.exports = webpackEmptyContext;\n\n//# sourceURL=webpack://battleship/./app/js/_sync_^\\.\\/languages.*\\.json$?");
+eval("var map = {\n\t\"./en.json\": [\n\t\t\"./languages/en.json\",\n\t\t\"languages_en_json\"\n\t],\n\t\"./tr.json\": [\n\t\t\"./languages/tr.json\",\n\t\t\"languages_tr_json\"\n\t]\n};\nfunction webpackAsyncContext(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\treturn Promise.resolve().then(() => {\n\t\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\t\te.code = 'MODULE_NOT_FOUND';\n\t\t\tthrow e;\n\t\t});\n\t}\n\n\tvar ids = map[req], id = ids[0];\n\treturn __webpack_require__.e(ids[1]).then(() => {\n\t\treturn __webpack_require__.t(id, 3 | 16);\n\t});\n}\nwebpackAsyncContext.keys = () => (Object.keys(map));\nwebpackAsyncContext.id = \"./languages lazy recursive ^\\\\.\\\\/.*\\\\.json$\";\nmodule.exports = webpackAsyncContext;\n\n//# sourceURL=webpack://battleship/./languages/_lazy_^\\.\\/.*\\.json$_namespace_object?");
 
 /***/ }),
 
@@ -25,29 +25,7 @@ eval("function webpackEmptyContext(req) {\n\tvar e = new Error(\"Cannot find mod
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// Translation function\nfunction translate(languageKey, translationKey) {\n  const language = __webpack_require__(\"./app/js sync recursive ^\\\\.\\\\/languages.*\\\\.json$\")(`./languages${languageKey}.json`);\n  return language[translationKey] || translationKey; // Return the translated text or the translation key itself if not found\n}\n\n// Example usage\nconst languageKey = 'en'; // Default language\nlet selectedLanguage = languageKey; // Store the selected language\n\n// Function to update the content based on the selected language\nfunction updateContent() {\n  const translations = {\n    // Language files with translations\n    en: __webpack_require__(/*! ../../../languages/en.json */ \"./languages/en.json\"),\n    tr: __webpack_require__(/*! ../../../languages/tr.json */ \"./languages/tr.json\")\n    // Add more languages as needed\n  };\n\n  // Get the language file based on the selected language\n  const language = translations[selectedLanguage];\n\n  // Update content using translation function\n  const titleElement = document.getElementById('title');\n  const gameObjectiveElement = document.getElementById('t-1');\n  if (titleElement) {\n    titleElement.textContent = translate(languageKey, 'title');\n  }\n  if (gameObjectiveElement) {\n    gameObjectiveElement.textContent = translate(languageKey, 't-1');\n  }\n\n  // Update other content elements as needed\n}\n\n// Function to handle language change\nfunction changeLanguage(language) {\n  selectedLanguage = language;\n  updateContent();\n}\n\n// Set up event listeners for language buttons\nconst turkishBtn = document.getElementById('turkishBtn');\nconst englishBtn = document.getElementById('englishBtn');\nturkishBtn.addEventListener('click', () => {\n  changeLanguage('tr');\n});\nenglishBtn.addEventListener('click', () => {\n  changeLanguage('en');\n});\n\n// Initial content update\nupdateContent();\n\n//# sourceURL=webpack://battleship/./app/js/translate.js?");
-
-/***/ }),
-
-/***/ "./languages/en.json":
-/*!***************************!*\
-  !*** ./languages/en.json ***!
-  \***************************/
-/***/ ((module) => {
-
-"use strict";
-eval("module.exports = JSON.parse('{\"title\":\"Battle Ship\",\"t-1\":\"Game Objective\",\"l-1\":\"The object of Battleship is to try and sink all of the other player\\'s before they sink all of your ships.\",\"l-2\":\"Other player\\'s ships are somewhere on the board.\",\"l-3\":\"You try and hit them by calling out the coordinates of one of the squares on the board.\",\"l-4\":\"The other player also tries to hit your ships by calling out coordinates.\",\"l-5\":\"Neither you nor the other player can see the other\\'s board so you must try to guess where they are.\",\"t-2\":\"Starting a New Game\",\"l2-1\":\"Each player places the 5 ships somewhere on their board.\",\"l2-2\":\"The ships can only be placed vertically or horizontally. Diagonal placement is not allowed.\",\"l2-3\":\"No ships may be placed on another ship.\",\"l2-4\":\"h4:The 5 ships are:\",\"l3-1\":\"Carrier (occupies 5 spaces)\",\"l3-2\":\"Battleship (4)\",\"l3-3\":\"Cruiser (3)\",\"l3-4\":\"Submarine (3)\",\"l3-5\":\"Destroyer (2)\",\"t-3\":\"Playing the Game\",\"l4-1\":\"Player\\'s take turns guessing by calling out the coordinates.\",\"l4-2\":\"The opponent responds with \\'hit\\' or \\'miss\\' as appropriate.\",\"l4-3\":\"When all of the squares that one your ships occupies have been hit, the ship will be sunk.\",\"l4-4\":\"As soon as all of one player\\'s ships have been sunk, the game ends.\",\"get-started\":\"Let\\'s Get Started\",\"submit\":\"Submit\",\"Copyright\":\"Copyright © 2023 Cissty\"}');\n\n//# sourceURL=webpack://battleship/./languages/en.json?");
-
-/***/ }),
-
-/***/ "./languages/tr.json":
-/*!***************************!*\
-  !*** ./languages/tr.json ***!
-  \***************************/
-/***/ ((module) => {
-
-"use strict";
-eval("module.exports = JSON.parse('{\"title\":\"Savaş Gemisi\",\"t-1\":\"Oyun Hedefi\",\"l-1\":\"Battleship oyununun amacı, diğer oyuncunun tüm gemilerini batırmadan önce kendi gemilerinizin hepsini batırmaktır.\",\"l-2\":\"Diğer oyuncunun gemileri tahtanın bir yerinde bulunmaktadır.\",\"l-3\":\"Tahtadaki karelerin koordinatlarını çağırarak onlara isabet ettirmeye çalışırsınız.\",\"l-4\":\"Diğer oyuncu da koordinatları çağırarak sizin gemilerinizi vurmaya çalışır.\",\"l-5\":\"Siz veya diğer oyuncu birbirinizin tahtasını göremediğiniz için nerede olduklarını tahmin etmeye çalışmanız gerekir.\",\"t-2\":\"Yeni Bir Oyun Başlatma\",\"l2-1\":\"Her oyuncu 5 gemiyi tahtalarının bir yerine yerleştirir.\",\"l2-2\":\"Gemiler sadece dikey veya yatay olarak yerleştirilebilir. Çapraz yerleştirme mümkün değildir.\",\"l2-3\":\"Başka bir geminin üzerine gemi yerleştirilemez.\",\"l2-4\":\"h4:5 gemi şunlardır:\",\"l3-1\":\"Carrier (5 kare kaplar)\",\"l3-2\":\"Battleship (4)\",\"l3-3\":\"Cruiser (3)\",\"l3-4\":\"Submarine (3)\",\"l3-5\":\"Destroyer (2)\",\"t-3\":\"Oyunu Oynama\",\"l4-1\":\"Oyuncular, koordinatları çağırarak sırayla tahminde bulunur.\",\"l4-2\":\"Rakip, \\'isabet\\' veya \\'ışın\\' şeklinde uygun şekilde yanıt verir.\",\"l4-3\":\"Bir geminin kapladığı karelerin tamamı vurulduğunda gemi batırılır.\",\"l4-4\":\"Bir oyuncunun tüm gemileri batırıldığında oyun biter.\",\"get-started\":\"Hadi Başlayalım\",\"submit\":\"Gönder\",\"Copyright\":\"Telif Hakkı © 2023 Cissty\"}');\n\n//# sourceURL=webpack://battleship/./languages/tr.json?");
+eval("let translations;\nfunction translate(languageKey, translationKey) {\n  const language = translations[languageKey];\n  return language && language[translationKey] ? language[translationKey] : translationKey;\n}\nconst languageKey = 'en'; //default\nlet selectedLanguage = languageKey;\n\n// Function to update the content based on the selected language\nasync function updateContent() {\n  translations = await __webpack_require__(\"./languages lazy recursive ^\\\\.\\\\/.*\\\\.json$\")(`./${selectedLanguage}.json`);\n  const elements = document.querySelectorAll('[data-translate]');\n\n  // Update content using translation function\n  elements.forEach(element => {\n    const translationKey = element.dataset.translate;\n    element.textContent = translate(selectedLanguage, translations[translationKey]);\n  });\n}\nfunction changeLanguage(language) {\n  selectedLanguage = language;\n  updateContent();\n}\nconst turkishBtn = document.getElementById('turkishBtn');\nconst englishBtn = document.getElementById('englishBtn');\nturkishBtn.addEventListener('click', () => {\n  changeLanguage('tr');\n});\nenglishBtn.addEventListener('click', () => {\n  location.reload(); //restarting page and removing the scroll-bar\n  changeLanguage('en');\n});\n\n//Validate user input in main page//\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  const nameInput = document.getElementById('name-input');\n  const submitButton = document.getElementById('submit-btn');\n  const errorText = document.getElementById('error-text');\n\n  // Load name from localStorage if available\n  const savedName = localStorage.getItem('username');\n  if (savedName) {\n    nameInput.value = savedName;\n  }\n  submitButton.addEventListener('click', validateAndSubmit);\n  nameInput.addEventListener('keydown', function (event) {\n    if (event.key === 'Enter') {\n      validateAndSubmit();\n      event.preventDefault();\n    }\n  });\n  function validateAndSubmit() {\n    const name = nameInput.value.trim();\n    if (name === '') {\n      showError('Please enter a name.'); // Show error if name is empty\n    } else if (!validateName(name)) {\n      showError('Invalid name. Only letters, numbers, and spaces are allowed.'); // Show error for invalid name\n    } else {\n      hideError();\n      // Save name to localStorage\n      localStorage.setItem('username', name);\n      console.log(name);\n    }\n  }\n  function validateName(name) {\n    const regex = /^[a-zA-Z0-9\\s]+$/;\n    return regex.test(name);\n  }\n  function showError(errorMessage) {\n    errorText.textContent = errorMessage;\n    errorText.style.display = 'block';\n  }\n  function hideError() {\n    errorText.style.display = 'none';\n  }\n});\n\n//# sourceURL=webpack://battleship/./app/js/translate.js?");
 
 /***/ })
 
@@ -77,10 +55,268 @@ eval("module.exports = JSON.parse('{\"title\":\"Savaş Gemisi\",\"t-1\":\"Oyun H
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + ".js";
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get mini-css chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.miniCssF = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return undefined;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		var dataWebpackPrefix = "battleship:";
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.setAttribute("data-webpack", dataWebpackPrefix + key);
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"translate": 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if(true) { // all chunks have JS
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						}
+/******/ 					}
+/******/ 				}
+/******/ 		};
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 		
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunkbattleship"] = self["webpackChunkbattleship"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
 /******/ 	
 /************************************************************************/

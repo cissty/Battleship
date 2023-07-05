@@ -191,6 +191,26 @@ h1 {
   cursor: pointer;
 }
 
+/* Width and height of the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  /* Background color of the scrollbar track */
+  /* Styles for the scrollbar thumb */
+}
+::-webkit-scrollbar-track {
+  background: #a7a7a7;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.9176470588);
+  border-radius: 2px;
+  cursor: pointer;
+  /* Styles for the scrollbar thumb when hovering */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 main {
   display: grid;
   grid-template-columns: 3fr 1fr;
