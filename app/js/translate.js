@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Save name to localStorage
       localStorage.setItem('username', name);
       console.log(name)
+      window.location.href = '/game.html';
     }
   }
 
@@ -87,4 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
     errorText.style.display = 'none';
   }
 });
+
+
 

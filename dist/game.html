@@ -7,9 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./game.css">
     <script src="./main.js" defer></script>
-    <script src="./translate.js" defer></script>
+    <script src="./games.js" defer></script>
 </head>
 <body class="grid grid-rows-[130px,1fr,60px]">
     <header>
@@ -73,54 +73,48 @@
         </div>
         
     </header>
-    <main>
-      <div class="info-container">
-        <div class="card">
-          <h3 data-translate="t-1">Game Objective</h3>
-          <ol>
-            <li data-translate="l-1">The object of Battleship is to try and sink all of the other player's before they sink all of your ships.</li>
-            <li data-translate="l-2">Other player's ships are somewhere on the board.</li>
-            <li data-translate="l-3">You try and hit them by calling out the coordinates of one of the squares on the board.</li>
-            <li data-translate="l-4">The other player also tries to hit your ships by calling out coordinates.</li>   
-            <li data-translate="l-5">Neither you nor the other player can see the other's board so you must try to guess where they are.</li>
-          </ol>
+    <main id="main">
+      <section class="popup-on-load">
+        <div class="container">
+          
+          <div id="grid-box" class="grid">
+          </div>
         </div>
-        <div class="card">
-          <h3 data-translate="t-2">Starting a New Game</h3>
-          <ol>
-            <li data-translate="l2-1">Each player places the 5 ships somewhere on their board.</li>
-            <li data-translate="l2-2">The ships can only be placed vertically or horizontally. Diagonal placement is not allowed.</li>
-            <li data-translate="l2-3">No ships may be placed on another ship.</li>
-            <li data-translate="l2-4"><h4>The 5 ships are:</h4></li>
-            <ul>
-              <li data-translate="l3-1">Carrier (occupies 5 spaces)</li>
-              <li data-translate="l3-2">Battleship (4)</li>
-              <li data-translate="l3-3">Cruiser (3)</li>
-              <li data-translate="l3-4">Submarine (3)</li>
-              <li data-translate="l3-5">Destroyer (2)</li>
-            </ul>
-          </ol>
-        </div>
-        <div class="last card">
-          <h3 data-translate="t-3">Playing the Game</h3>
-          <ol>
-            <li data-translate="l4-1">Player's take turns guessing by calling out the coordinates.</li>
-            <li data-translate="l4-2">The opponent responds with "hit" or "miss" as appropriate.</li>
-            <li data-translate="l4-3">When all of the squares that one your ships occupies have been hit, the ship will be sunk.</li>
-            <li data-translate="l4-4"><strong>As soon as all of one player's ships have been sunk, the game ends.</strong></li>
-          </ol>
-        </div>
-      </div>
-      <div class="user-interface">
-        <h2 data-translate="get-started">Let's Get Started</h2>
-        <div class="form-group">
-          <input type="text" id="name-input" placeholder="Enter your name">
-          <button data-translate="submit" id="submit-btn">Submit</button>
-        </div>
-        <p id="error-text" style="color: azure; margin-top: 4px;"></p>
+      </section>
 
-      </div>
+      <section class="helper-items">
+        <h2 class="greet">Hello ${USER}</h2>
+          <ol>
+            <li>The numbers next to each ship indicate how many spaces it occupies on the board.</li>
+            <li>To place a ship on your board, click on the ship card and then click on the desired location on the board.</li>
+            <li>When you have finished placing all your ships, click the button below to indicate that you are ready to start the game.</li>
+          </ol>
+          <button id="ready-button" ">Ready</button>
+      </section>
+     
+      <section class="ships">
+        <button class="ship-card" id="carriership">
+          <h3>Carrier <span class="number">(5)</span></h3>
+        </button>
+        
+        <button class="ship-card" id="battleship">
+          <h3>Battleship <span class="number">(4)</span></h3>
+        </button>
+        
+        <button class="ship-card" id="cruisership">
+          <h3>Cruiser <span class="number">(3)</span></h3>
+        </button>
+        
+        <button class="ship-card" id="submarineship">
+          <h3>Submarine <span class="number">(3)</span></h3>
+        </button>
+        
+        <button class="ship-card last" id="destroyership">
+          <h3>Destroyer <span class="number">(2)</span></h3>
+        </button>
+      </section>
     </main>
+
     <footer><p><strong>Copyright © 2023 Cissty</strong></p>
         <a href="https://github.com/cissty" target="_blank">
           <?xml version="1.0"?><svg
