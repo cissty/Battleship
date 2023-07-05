@@ -5,8 +5,10 @@ module.exports = {
   mode: "development",
   entry: {
     main: "./app/js/script.js",
-    validateUser: "./app/js/validate-user.js",
-    translate: "./app/js/translate.js"
+    translate: "./app/js/translate.js",
+    games: "./app/js/game.js",
+    style: "./app/scss/style.scss",
+    game: "./app/scss/game.scss",
   },
   output: {
     filename: "[name].js",
@@ -33,7 +35,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.css",
+      filename: "[name].css",
     }),
   ],
   devServer: {

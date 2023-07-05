@@ -1,0 +1,283 @@
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/scss/style.scss ***!
+  \**************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rye&display=swap);
+/*!******************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/scss/style.scss (1) ***!
+  \******************************************************************************************************************/
+:root {
+  --font-inter: "Inter", sans-serif;
+  --font-head: "Rye", cursive;
+}
+
+:root {
+  --Limegreen: hsl(163, 72%, 41%);
+  --brightred:hsl(356, 69%, 56%);
+  --card-left: hsl(208, 92%, 53%);
+  --card-right: hsl(203, 89%, 53%);
+  --or-top:hsl(37, 97%, 70% );
+  --or-bot: hsl(329, 70%, 58%);
+  --red-c: hsl(348, 97%, 39%);
+  --toggle-bg-start: hsl(210, 78%, 56%);
+  --toggle-bg-end: hsl(146, 68%, 55%);
+  --toggle: hsl(230, 22%, 74%);
+  --dark-bg: hsl(230, 17%, 14%);
+  --dark-top-bg: hsl(232, 19%, 15%);
+  --dark-card: hsl(228, 28%, 20% );
+  --dark-text1: Ihsl(228, 34%, 66%);
+  --dark-text2: hsl(0, 0%, 100%);
+  --Light-bg: hsl(0, 0%, 100%);
+  --Light-top-bg: hsl(225, 100%, 98%);
+  --Light-card: hsl(227, 47%, 96%);
+  --Light-text1: hsl(228, 12%, 44%);
+  --Light-text2: hsl(230, 17%, 14%);
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter);
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  margin-top: 0;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+body {
+  background-image: linear-gradient(rgba(4, 9, 30, 0.562), rgba(4, 9, 30, 0.418)), url(4e7a2edcad35cdc23b67.jpg);
+  backdrop-filter: blur(5px);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-rows: 6.25rem 1fr 3.125rem;
+  height: 100vh;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--Light-card);
+  font-size: 1.25rem;
+}
+footer svg {
+  margin-left: 0.9375rem;
+}
+
+h1 {
+  text-align: center;
+  color: var(--Light-card);
+  font-family: var(--font-head);
+  font-size: 3.75rem;
+}
+
+.card {
+  padding: 1.25rem;
+  color: white;
+  border-radius: 0.625rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 21.875rem;
+  height: 31.25rem;
+  overflow: auto;
+  border-left: 5px solid var(--card-left);
+}
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.625rem;
+  text-align: center;
+}
+.card ol {
+  list-style-type: decimal;
+  margin-left: 1.25rem;
+  padding-left: 1.25rem;
+}
+.card ol li {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0.625rem;
+}
+.card ol li h4 {
+  font-size: 1.1rem;
+  margin-top: 0.9375rem;
+  margin-bottom: 0.3125rem;
+}
+.card ol li ul {
+  margin-top: 0.3125rem;
+  margin-bottom: 0.625rem;
+  padding-left: 1.25rem;
+}
+.card ol li ul li {
+  font-weight: normal;
+}
+
+.last.card {
+  grid-column: span 2;
+  height: 12.5rem;
+  width: max-content;
+  padding: 0.625rem;
+}
+
+.user-interface {
+  justify-self: center;
+  align-self: center;
+  background-color: inherit;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.363);
+  border-left: 3px solid var(--Light-card);
+  border-top: 3px solid var(--Light-card);
+  border-bottom: 3px solid var(--card-left);
+  border-right: 3px solid var(--card-left);
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-interface h2 {
+  font-size: 1.5rem;
+  color: var(--Light-bg);
+  margin-bottom: 20px;
+}
+.user-interface .form-group {
+  display: flex;
+  align-items: center;
+}
+.user-interface .form-group input[type=text] {
+  flex-grow: 1;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+.user-interface .form-group button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Width and height of the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  /* Background color of the scrollbar track */
+  /* Styles for the scrollbar thumb */
+}
+::-webkit-scrollbar-track {
+  background: #a7a7a7;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.9176470588);
+  border-radius: 2px;
+  cursor: pointer;
+  /* Styles for the scrollbar thumb when hovering */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+header .music {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .music #volumeSlider {
+  cursor: pointer;
+}
+header .side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+header #toggleButton {
+  margin-right: 2rem;
+  border-radius: 40%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+header #toggleButton:active {
+  scale: 1.1;
+}
+
+.button.tr, .button.en {
+  background-image: url(47e15f24112a878a4a5e.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  background-color: inherit;
+  cursor: pointer;
+}
+.button.tr:active, .button.en:active {
+  scale: 1.05;
+}
+
+.button.en {
+  background-image: url(3e9c1c14d43a9d22f09c.png);
+}

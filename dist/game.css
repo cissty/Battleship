@@ -1,10 +1,10 @@
-/*!**************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/scss/style.scss ***!
-  \**************************************************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/scss/game.scss ***!
+  \*************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rye&display=swap);
-/*!******************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/scss/style.scss (1) ***!
-  \******************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./app/scss/game.scss (1) ***!
+  \*****************************************************************************************************************/
 :root {
   --font-inter: "Inter", sans-serif;
   --font-head: "Rye", cursive;
@@ -17,7 +17,7 @@
   --card-right: hsl(203, 89%, 53%);
   --or-top:hsl(37, 97%, 70% );
   --or-bot: hsl(329, 70%, 58%);
-  --youtube: hsl(348, 97%, 39%);
+  --red-c: hsl(348, 97%, 39%);
   --toggle-bg-start: hsl(210, 78%, 56%);
   --toggle-bg-end: hsl(146, 68%, 55%);
   --toggle: hsl(230, 22%, 74%);
@@ -211,20 +211,6 @@ h1 {
   background: #555;
 }
 
-main {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-}
-
-.info-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 1.25rem;
-}
-
 header {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -280,4 +266,129 @@ header #toggleButton:active {
 
 .button.en {
   background-image: url(3e9c1c14d43a9d22f09c.png);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 200px 1fr;
+}
+
+.popup-on-load {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  gap: 10px;
+}
+.popup-on-load .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.popup-on-load .grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  height: 600px;
+  width: 600px;
+  border: 1px solid wheat;
+  box-shadow: 4px 8px 8px hsla(0, 0%, 0%, 0.78);
+}
+.popup-on-load .grid > * {
+  border: 1px solid #ccc; /* Add border to each grid item */
+}
+
+.helper-items {
+  color: var(--Light-top-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+  gap: 1.25rem;
+}
+.helper-items ol {
+  border-left: 2px solid rgba(255, 0, 0, 0.521);
+}
+.helper-items .greet {
+  color: var(--or-top);
+}
+.helper-items #ready-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--Limegreen);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 0.625rem;
+}
+.helper-items #ready-button:hover {
+  background-color: #45a049;
+}
+
+.ships {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.ship-card {
+  width: 200px;
+  border: 1px solid #ccc;
+  background-color: inherit;
+  padding: 10px;
+  margin: 10px;
+  height: 100px;
+  color: whitesmoke;
+  text-align: center;
+  cursor: pointer;
+}
+.ship-card:active {
+  scale: 1.05;
+}
+.ship-card.last {
+  grid-column: span 2;
+}
+.ship-card .number {
+  color: var(--card-right);
+}
+
+#battleship, #carriership, #cruisership, #submarineship, #destroyership {
+  background-color: inherit;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in-out;
+}
+
+#battleship:hover, #carriership:hover, #cruisership:hover, #submarineship:hover, #destroyership:hover {
+  backdrop-filter: blur(10px);
+  color: var(--or-top);
+  scale: 1.05;
+}
+
+#battleship:hover {
+  background-image: url(4a502287fcb2689d3dc2.png);
+}
+
+#carriership:hover {
+  background-image: url(94f26d0ca331df2e52c5.png);
+}
+
+#cruisership:hover {
+  background-image: url(6903dfcf5bd3b01b8f14.png);
+}
+
+#submarineship:hover {
+  background-image: url(b50bbacd1d1609218298.png);
+}
+
+#destroyership:hover {
+  background-image: url(0dd1879d7b5ab8dd2a04.png);
 }

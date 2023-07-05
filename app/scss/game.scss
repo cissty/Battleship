@@ -1,0 +1,196 @@
+@use './util/index' as *;
+@use 'globals';
+@use 'components';
+
+header {
+    .music{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & #volumeSlider{
+            cursor: pointer;
+        }
+    }
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+    .side{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+  header .search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+  header #toggleButton {
+    margin-right: 2rem;
+    border-radius: 40%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  header #toggleButton:active {
+    scale: 1.1;
+  }
+  
+  .button.tr, .button.en{
+    background-image: url("/images/tr-flag.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: rem(40);
+    height: rem(40);
+    border: none;
+    border-radius: 50%;
+    background-color: inherit;
+    cursor: pointer;
+        &:active{
+            scale: 1.05;
+        }
+  }
+  .button.en{
+    background-image: url("/images/en-flag.png");
+  }
+
+  //GAME SECTION//
+  main{
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+  }
+
+  .popup-on-load{   //first section(grid)
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    gap: 10px;
+    
+        .container {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            height: 600px;
+            width: 600px;
+            border: 1px solid wheat;
+            box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.78);
+        }
+        .grid > * {
+            border: 1px solid #ccc; /* Add border to each grid item */
+          }
+  }
+
+  //section 2
+  .helper-items{
+    color: var(--Light-top-bg); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    gap: rem(20);
+
+    ol {
+        border-left: 2px solid rgba(255, 0, 0, 0.521);
+
+    }
+
+    .greet{
+        color: var(--or-top);
+
+    }
+
+    #ready-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--Limegreen);
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border-radius: rem(10);
+      
+        &:hover {
+          background-color: #45a049;
+        }
+      }
+      
+
+  }
+
+
+  .ships{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+  }
+
+//section 3
+.ship-card {
+    width: 200px;
+    border: 1px solid #ccc;
+    background-color: inherit;
+    padding: 10px;
+    margin: 10px;
+    height: 100px;
+    color: whitesmoke;
+    text-align: center;
+    cursor: pointer;
+
+    &:active {
+        scale: 1.05;
+    }
+
+    &.last{
+        grid-column: span 2;
+    }
+    .number{
+        color: var(--card-right);
+    }
+  }
+
+  #battleship, #carriership, #cruisership, #submarineship, #destroyership {
+    background-color: inherit;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  
+  #battleship:hover, #carriership:hover, #cruisership:hover, #submarineship:hover, #destroyership:hover {
+    backdrop-filter: blur(10px);
+    color: var(--or-top);
+    scale: 1.05;
+  }
+  #battleship:hover{
+    background-image: url(/images/ships/battleship.png);
+  }
+  #carriership:hover{
+    background-image: url(/images/ships/carriership.png);
+  }
+  #cruisership:hover{
+    background-image: url(/images/ships/cruisership.png);
+  }
+  #submarineship:hover{
+    background-image: url(/images/ships/submarine.png);
+  }
+  #destroyership:hover{
+    background-image: url(/images/ships/destroyership.png);
+  }
+    
